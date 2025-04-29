@@ -11,7 +11,7 @@ import json
 from datetime import datetime, timedelta
 from translate import Translator
 
-# === CONFIGURAÇÕES ===
+# -- CONFIGURAÇÕES --
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 engine.setProperty('rate', 150)
@@ -21,10 +21,10 @@ wikipedia.set_lang('pt')
 # OpenWeather API Key
 API_WEATHER = "548a905eb36c4289a58ae41aebb453a3"
 
-# Memoria de anotações e lembretes
+# Memoria de agenda e lembretes
 arquivo_memoria = "lembretes.json"
 
-# === FUNÇÕES BASE ===
+# --- FUNÇÕES BASE ---
 def falar(texto):
     print(f"[Jarvis] {texto}")
     engine.say(texto)
@@ -44,7 +44,6 @@ def ouvir_comando():
         print("Não consegui entender.")
         return ""
 
-# === FUNÇÕES EXTRAS ===
 def buscar_wikipedia(termo):
     try:
         resultado = wikipedia.summary(termo, sentences=2)
@@ -208,7 +207,7 @@ def abrir_aplicativo():
     else:
         falar("Não reconheci o aplicativo.")
 
-# === FUNÇÃO PRINCIPAL ===
+# -- FUNÇÃO PRINCIPAL --
 def main():
     falar("Assistente iniciado. Diga 'Ei Jarvis', para começar.")
 
